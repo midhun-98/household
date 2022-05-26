@@ -1,0 +1,7 @@
+<?php
+session_start();
+include 'conn.php';
+$reject=$_GET['reject_id'];
+mysqli_query($conn,"UPDATE booking_tb SET status='0'  where product_id='$reject'");
+header('location:view_order.php');
+?>
