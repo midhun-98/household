@@ -57,7 +57,7 @@ IF($_SESSION['logedin']!=TRUE)
                                 <i class="fas fa-user"></i>Lineman</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="jobstatus.php">
                                 <i class="fas fa-chart-bar"></i>Job Status</a>
                         </li>
                         <?php } ?>
