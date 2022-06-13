@@ -2,7 +2,7 @@
 include 'conn.php';
 
 $username=$_POST['username'];
-$password=$_POST['password'];
+$password=$_POST['password'];;
 
 $query=mysqli_query($conn,"SELECT * FROM login_tb where username='$username' AND password='$password'");
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'conn.php';
-$query=mysqli_query($conn,"SELECT * FROM supervisor_tb ");
+$query=mysqli_query($conn,"SELECT * FROM supervisor_tb");
 ?>
 
 <!DOCTYPE html>

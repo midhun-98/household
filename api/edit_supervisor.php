@@ -1,6 +1,6 @@
 <?php
 include 'conn.php';
-$edit=$_POST['edit_id'];
+$edit=$_GET['edit_id'];
 $query=mysqli_query($conn,"SELECT * FROM supervisor_tb where login_id='$edit'");
 
 

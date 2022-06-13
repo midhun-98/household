@@ -13,7 +13,7 @@ if(isset($_POST['subm']))
     $id=mysqli_insert_id($conn);
 
     mysqli_query($conn,"INSERT INTO lineman_tb(login_id,name,email,mobile,username,password)VALUES('$id','$name','$email','$mobile','$username','$password')");
-     header('location:view_lineman.php');
+    header('location:view_lineman.php');
 }
 ?>
 
@@ -112,7 +112,7 @@ if(isset($_POST['subm']))
                                                     <label for="hf-email" class=" form-control-label">Mobile</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" name="mobile" placeholder="mobile" class="form-control" required="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                                                    <input type="text" name="mobile" placeholder="mobile" class="form-control" maxlength="10" required="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
                                                     <!-- <span class="help-block">Please enter your email</span> -->
                                                 </div>
                                             </div>
@@ -130,7 +130,7 @@ if(isset($_POST['subm']))
                                                     <label for="hf-password" class=" form-control-label">Password</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="password" name="password" placeholder="Enter Password..." class="form-control" required>
+                                                    <input type="password" name="password" maxlength="8" placeholder="Enter Password..." class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="card-footer">

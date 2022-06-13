@@ -44,7 +44,7 @@ IF($_SESSION['logedin']!=TRUE)
                         </li>
                          <li>
                             <a href="view_order.php">
-                                <i class="fas fa-calendar-alt"></i>Requests</a>
+                                <i class="fa fa-shopping-cart"></i>Requests</a>
                         </li>
 
                         <?php } ?>
@@ -57,7 +57,7 @@ IF($_SESSION['logedin']!=TRUE)
                                 <i class="fas fa-user"></i>Lineman</a>
                         </li>
                         <li>
-                            <a href="jobstatus.php">
+                            <a href="view_job_status.php">
                                 <i class="fas fa-chart-bar"></i>Job Status</a>
                         </li>
                         <?php } ?>

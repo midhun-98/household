@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'conn.php';
-$query=mysqli_query($conn,"SELECT * FROM booking_tb join product_tb on booking_tb.product_id=product_tb.product_id where status='Requested' ");
+$query=mysqli_query($conn,"SELECT * FROM complaint_tb");
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ $query=mysqli_query($conn,"SELECT * FROM booking_tb join product_tb on booking_t
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Household-Product</title>
+    <title>Household-Complaint</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -78,10 +78,10 @@ $query=mysqli_query($conn,"SELECT * FROM booking_tb join product_tb on booking_t
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>Product Name</th>
-                                                <th>User Id</th>
-                                                <th>Count</th>
-                                                <th>Action</th>
+                                                <th>Date</th>
+                                                <th>Complaint</th>
+                                                <th>Post Number</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <?php
@@ -90,11 +90,21 @@ $query=mysqli_query($conn,"SELECT * FROM booking_tb join product_tb on booking_t
                                         ?>
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $row['product_name'];?></td>
-                                                <td><?php echo $row['user_id'];?></td>
-                                                <td><?php echo $row['count'];?></td>
-                                                <td><a href="accept_booking.php?accept_id=<?php echo $row['product_id'];?>"><input type="submit" name="accept" class="btn btn-primary btn-sm" value="ACCEPT">&nbsp
-                                                <a href="reject_booking.php?reject_id=<?php echo $row['product_id'];?>"><input type="submit" name="reject" class="btn btn-danger btn-sm" value="REJECT"></td>
+                                                <td><?php echo $row['date'];?></td>
+
+                                                <td><?php echo $row['complaint'];?></td>
+
+                                                <td><?php echo $row['post_number'];?></td>    
+
+                                                <td>
+                                                   <?php
+                                                   if($row['status']=='PENDING'){?>
+                                                    <b style="color:red"><?php echo $row['status'];?></b>
+                                                    <?php }
+                                                    else{?>
+                                                    <b style="color:green"><?php echo $row['status'];?></b>
+                                                    <?php }?> </td>
+                                                </td>
                                             </tr>
                                         </tbody>
                                         <?php
